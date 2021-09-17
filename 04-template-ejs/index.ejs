@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Home Page</title>
+     
+    <style type="text/css" media="screen">
+        body {
+            background-color: skyblue;
+            text-decoration-color: white;
+            font-size: 44px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <% title%>
+    Hobbies of <%=data.name%> are mapped:<br/>
+     
+    <ul>
+        <% data.hobbies.map((item)=>{%>
+        <li><%=item%></li>
+        <%});%>
+    </ul>
+</body>
+ 
+</html> 
