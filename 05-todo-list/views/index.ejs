@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title> Todo app </title>
+    <link href="/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h2> Simple Todo app </h2>
+        <form action="/addtask" method="POST">
+            <input type="text" name="newtask" placeholder="add new task"> <button> Add Task </button>
+            <h2> Added Task </h2>
+            <ul>
+                <% for( var i=0; i < task.length; i++){ %>
+                    <li><input type="checkbox" name="check" value="<%= task[i].id %>" />
+                        <%= task[i].id %><%= task[i].task %>
+                    </li>
+                    <% } %>
+            </ul>
+            <div class="inline-btn">
+                <button formaction="/removetask" type="submit"> Remove </button>
+                <button formaction="/finishedTask" type="submit"> Finished </button>
+            </div>
+        </form>
+
+        <h2 onClick="getNewCard()"> Completed task  </h2>
+        <ul>
+            <% complete.map(task=> { %>
+                <li><input type="checkbox" checked>
+                    <%= task.task %>
+                </li>
+                <% }) %>
+        </ul>
+    </div>
+</body>
+<script>
+    function getNewCard() {
+        console.log('you click me')
+    }
+</script>
+
+</html>
